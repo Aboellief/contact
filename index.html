@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ahmed Abo Ellief</title>
+<meta name="description" content="Lighting & Lookdev Artist | Senior Technical Artist. Cairo, Egypt.">
+<meta property="og:title" content="Ahmed Abo Ellief">
+<meta property="og:description" content="Lighting & Lookdev Artist | Senior Technical Artist. Phone, WhatsApp, email, ArtStation, LinkedIn, YouTube.">
+<meta property="og:type" content="profile">
+<meta property="og:url" content="https://aboellief.github.io/contact/">
+<meta name="theme-color" content="#0d0c0b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+/* layout: one slate-style card, centered; rows labeled like render AOV channels; QR at the foot */
+:root{
+  --bg:#0d0c0b;
+  --surface:#17140f;
+  --surface-2:#1f1b15;
+  --fg:#ece7de;
+  --muted:#9a9388;
+  --accent:#e2813f;
+  --on-accent:#140d06;
+  --line:#2b2620;
+  --qr-bg:#ffffff;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root{
+    --bg:#f0f0ee;
+    --surface:#ffffff;
+    --surface-2:#f6f5f2;
+    --fg:#1a1813;
+    --muted:#6b655c;
+    --accent:#b85620;
+    --on-accent:#ffffff;
+    --line:#dddad3;
+    color-scheme:light;
+  }
+}
+
+*{box-sizing:border-box}
+html{ padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px); }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+  padding-left:max(16px, env(safe-area-inset-left,0px));
+  padding-right:max(16px, env(safe-area-inset-right,0px));
+  padding-block:28px;
+  display:flex;
+  justify-content:center;
+  -webkit-text-size-adjust:100%;
+}
+
+.card{
+  width:100%;
+  max-width:440px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:26px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.slate-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:11px;
+  letter-spacing:.14em;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+
+header{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+h1{
+  font-family:'Bebas Neue',Impact,'Arial Narrow',sans-serif;
+  font-weight:400;
+  font-size:46px;
+  line-height:.92;
+  letter-spacing:.015em;
+  margin:0;
+  text-wrap:balance;
+}
+.role{ font-size:13px; line-height:1.5; opacity:.88; }
+.loc{ font-size:11px; letter-spacing:.1em; color:var(--accent); text-transform:uppercase; }
+
+.save{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  background:var(--accent);
+  color:var(--on-accent);
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:14px;
+  border-radius:12px;
+}
+.save:hover{ filter:brightness(1.07); }
+
+.channels{ display:flex; flex-direction:column; gap:2px; }
+.channel{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:10px;
+}
+.channel:nth-child(odd){ background:var(--surface-2); }
+.info{ display:flex; flex-direction:column; gap:3px; min-width:0; }
+.tag{ font-size:10px; letter-spacing:.14em; color:var(--accent); font-weight:600; }
+.val{ font-size:13.5px; overflow-wrap:anywhere; color:var(--fg); text-decoration:none; }
+a.val:hover{ text-decoration:underline; text-decoration-color:var(--accent); }
+
+.actions{ display:flex; gap:6px; }
+.btn{
+  font-family:inherit;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--fg);
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px 10px;
+  cursor:pointer;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.btn:hover{ border-color:var(--accent); }
+.btn[data-done="1"]{ color:var(--accent); border-color:var(--accent); }
+a:focus-visible, button:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+.qr-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  border-top:1px solid var(--line);
+  padding-top:18px;
+}
+.qr-wrap img{
+  display:block;
+  width:170px;
+  height:170px;
+  max-width:100%;
+  background:var(--qr-bg);
+  border-radius:12px;
+}
+.qr-caption{ font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
+
+footer{ text-align:center; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); }
+
+@media (max-width:360px){
+  .channel{ grid-template-columns:1fr; }
+}
+@media (prefers-reduced-motion:no-preference){
+  .card{ animation:rise .4s ease-out; }
+  @keyframes rise{ from{ opacity:0; transform:translateY(6px) } to{ opacity:1; transform:none } }
+}
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="slate-row">
+    <span>Shot: Contact_01</span>
+    <span>Status: Available</span>
+  </div>
+
+  <header>
+    <h1>Ahmed Abo Ellief</h1>
+    <div class="role">Lighting &amp; Lookdev Artist&nbsp;|&nbsp;Senior Technical Artist</div>
+    <div class="loc">Cairo, Egypt</div>
+  </header>
+
+  <a class="save" href="ahmed-abo-ellief.vcf" download="Ahmed Abo Ellief.vcf">+ Save contact</a>
+
+  <div class="channels">
+    <div class="channel">
+      <div class="info">
+        <span class="tag">TEL / WHATSAPP</span>
+        <a class="val" href="tel:+201127738585">+20 112 773 8585</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="tel:+201127738585">Call</a>
+        <a class="btn" href="https://wa.me/201127738585" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+    <div class="channel">
+      <div class="info">
+        <span class="tag">EMAIL</span>
+        <a class="val" href="mailto:ahmed.elsayed.abo.ellief@gmail.com">ahmed.elsayed.abo.ellief@gmail.com</a>
+      </div>
+      <div class="actions">
+        <button class="btn copy" type="button" data-copy="ahmed.elsayed.abo.ellief@gmail.com">Copy</button>
+      </div>
+    </div>
+    <div class="channel">
+      <div class="info">
+        <span class="tag">ARTSTATION</span>
+        <a class="val" href="https://ahmedaboellief.artstation.com" target="_blank" rel="noopener">ahmedaboellief.artstation.com</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://ahmedaboellief.artstation.com" target="_blank" rel="noopener">Open</a>
+      </div>
+    </div>
+    <div class="channel">
+      <div class="info">
+        <span class="tag">LINKEDIN</span>
+        <a class="val" href="https://www.linkedin.com/in/ahmed-aboellief" target="_blank" rel="noopener">linkedin.com/in/ahmed-aboellief</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://www.linkedin.com/in/ahmed-aboellief" target="_blank" rel="noopener">Open</a>
+      </div>
+    </div>
+    <div class="channel">
+      <div class="info">
+        <span class="tag">YOUTUBE</span>
+        <a class="val" href="https://www.youtube.com/@Ahmed_Abo_Ellief" target="_blank" rel="noopener">youtube.com/@Ahmed_Abo_Ellief</a>
+      </div>
+      <div class="actions">
+        <a class="btn" href="https://www.youtube.com/@Ahmed_Abo_Ellief" target="_blank" rel="noopener">Open</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="qr-wrap">
+    <img src="qr.png" alt="QR code that opens this page" width="170" height="170">
+    <div class="qr-caption">Scan to open this card</div>
+  </div>
+
+  <footer>10+ yrs · Maya · Arnold · Karma · USD pipelines</footer>
+</main>
+
+<script>
+document.querySelectorAll("button.copy").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    var text = btn.getAttribute("data-copy");
+    var done = function(){
+      btn.textContent = "Copied";
+      btn.setAttribute("data-done","1");
+      setTimeout(function(){ btn.textContent = "Copy"; btn.removeAttribute("data-done"); }, 1400);
+    };
+    var fallback = function(){
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand("copy"); done(); }catch(e){}
+      document.body.removeChild(ta);
+    };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+});
+</script>
+</body>
+</html>

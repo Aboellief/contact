@@ -1,0 +1,18 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Abo Ellief;Ahmed;;;
+FN:Ahmed Abo Ellief
+TITLE:Lighting & Lookdev Artist | Senior Technical Artist
+TEL;TYPE=CELL:+201127738585
+EMAIL;TYPE=INTERNET:ahmed.elsayed.abo.ellief@gmail.com
+URL:https://aboellief.github.io/contact/
+item1.URL:https://ahmedaboellief.artstation.com
+item1.X-ABLabel:ArtStation
+item2.URL:https://www.linkedin.com/in/ahmed-aboellief
+item2.X-ABLabel:LinkedIn
+item3.URL:https://www.youtube.com/@Ahmed_Abo_Ellief
+item3.X-ABLabel:YouTube
+item4.URL:https://wa.me/201127738585
+item4.X-ABLabel:WhatsApp
+ADR;TYPE=WORK:;;Cairo;;;;Egypt
+END:VCARD
